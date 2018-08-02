@@ -11,7 +11,7 @@ setuptools.setup(
     description="A Pool for Processes in Python with locks",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/ahmad88me/PPool",
+    url="https://github.com/oeg-upm/PPool",
     packages=setuptools.find_packages(),
     classifiers=(
         "Programming Language :: Python :: 2",
