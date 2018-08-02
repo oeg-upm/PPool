@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="PPool",
-    version="0.0.1",
+    version="0.1.0",
     author="Ahmad Alobaid",
     author_email="aalobaid@fi.upm.es",
     description="A Pool for Processes in Python with locks",

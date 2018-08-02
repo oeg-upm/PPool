@@ -1,6 +1,16 @@
 # PPool
 PPool is a Pool for Processes in Python with locks. The main advantage is the ability to use `Lock`s from  `multiprocessing`
 
+[![PyPI version](https://badge.fury.io/py/PPool.svg)](https://badge.fury.io/py/PPool)
+
+# Install
+```
+pip install PPool
+```
+
+# pypi
+`https://pypi.org/project/PPool/`
+
 
 # Example
 ```
@@ -14,3 +24,5 @@ pool = Pool(max_num_of_processes=3, func=foo, params_list=params)
 
 pool.run()
 ```
+
+
