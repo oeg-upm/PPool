@@ -1,13 +1,18 @@
 from multiprocessing import Process
-
+import logging
 
 class Pool(object):
-    def __init__(self, max_num_of_processes, func, params_list):
+    def __init__(self, max_num_of_processes, func, params_list, logger=None):
         self.max_num_of_processes = max_num_of_processes
         self.func = func
         self.params_list = params_list
         self.processes = []
         self.active_processes = []
+        if logger is None:
+            logger = logging.getLogger(__name__)
+            handler = logging.NullHandler()
+            logger.addHandler(handler)
+        self.logger = logger
 
     def run(self):
         for par in self.params_list:
@@ -37,6 +42,7 @@ class Pool(object):
                 p.start()
                 #print "spawn!"
                 #print "active processes: %d" % len(self.active_processes)
+                self.logger.info("active processes: %d" % len(self.active_processes))
                 self.active_processes.append(p)
 
         [p.join() for p in self.active_processes]
